@@ -80,13 +80,6 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
 fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
-            .padding(top = 300.dp,
-                start = 2.dp,
-                end = 2.dp,
-                bottom = 10.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-
-
     ) {
         ContactDetail(
                 Icons.Default.Phone,
@@ -120,16 +113,18 @@ private fun ContactDetail(icon: ImageVector, alt: String, content: String) {
 @Composable
 fun GreetingPreview() {
     P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
-        Titulo(
-            name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
-            title = stringResource(
-                R.string.desarrolladores_moviles
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Titulo(
+                name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
+                title = stringResource(
+                    R.string.desarrolladores_moviles
+                )
             )
-        )
-        Info(
-            telfNumb = stringResource(R.string._34_640870770),
-            mail = stringResource(R.string.correo_exampl_com),
-            socialHandle = stringResource(R.string.second_example_com)
-        )
+            Info(
+                telfNumb = stringResource(R.string._34_640870770),
+                mail = stringResource(R.string.correo_exampl_com),
+                socialHandle = stringResource(R.string.second_example_com)
+            )
+        }
     }
 }
