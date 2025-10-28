@@ -75,6 +75,12 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
 fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
+            .padding(top = 300.dp,
+                start = 2.dp,
+                end = 2.dp,
+                bottom = 10.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+
 
     ) {
         ContactDetail(
