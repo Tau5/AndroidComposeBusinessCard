@@ -86,7 +86,7 @@ fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifie
         modifier = modifier
     ) {
         ContactDetail(
-                Icons.Default.Phone,
+            Icons.Default.Phone,
             "Phone",
             telfNumb
         )
@@ -134,11 +134,11 @@ fun Greeting() {
 @Composable
 fun GreetingPreview() {
     P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
-    Surface (
-        modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background,
-    ){
-        Greeting()
-    }
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background,
+        ) {
+            Greeting()
+        }
     }
 }
