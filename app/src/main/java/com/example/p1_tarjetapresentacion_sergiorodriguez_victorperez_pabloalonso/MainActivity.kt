@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -61,35 +62,53 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
             )
         }
         Row {
-           Text(
-               text = "$title",
-               modifier = modifier
-                   .padding(2.dp)
-           )
+            Text(
+                text = "$title",
+                modifier = modifier
+                    .padding(2.dp)
+            )
         }
     }
 }
 
 @Composable
-fun Info(telfNumb: String, mail: String, secondMail:String) {
+fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
 
     ) {
+        ContactDetail(
+            painterResource(android.R.drawable.ic_menu_call),
+            "Phone",
+            telfNumb
+        )
         Row {
-            Text(
-                text = telfNumb
+            ContactDetail(
+                painterResource(android.R.drawable.sym_action_email),
+                "Mail",
+                mail
             )
         }
         Row {
-            Text(
-                text = mail
+            ContactDetail(
+                painterResource(android.R.drawable.ic_dialog_info),
+                "Social media",
+                socialHandle
             )
         }
-        Row {
-            Text(
-            text = secondMail
-        ) }
+    }
+}
+
+@Composable
+private fun ContactDetail(painter: Painter, alt: String, content: String) {
+    Row {
+        Image(
+            painter = painter,
+            contentDescription = alt
+        )
+        Text(
+            text = content
+        )
     }
 }
 
@@ -97,12 +116,16 @@ fun Info(telfNumb: String, mail: String, secondMail:String) {
 @Composable
 fun GreetingPreview() {
     P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
-        Titulo(name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
+        Titulo(
+            name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
             title = stringResource(
-            R.string.desarrolladores_moviles
-        ))
-        Info(telfNumb = stringResource(R.string._34_640870770), mail = stringResource(R.string.correo_exampl_com),
-            secondMail = stringResource(R.string.second_example_com)
+                R.string.desarrolladores_moviles
+            )
+        )
+        Info(
+            telfNumb = stringResource(R.string._34_640870770),
+            mail = stringResource(R.string.correo_exampl_com),
+            socialHandle = stringResource(R.string.second_example_com)
         )
     }
 }
