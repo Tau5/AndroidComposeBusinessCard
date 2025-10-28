@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
+                Greeting()
             }
         }
     }
@@ -109,22 +110,27 @@ private fun ContactDetail(icon: ImageVector, alt: String, content: String) {
     }
 }
 
+@Composable
+fun Greeting() {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Titulo(
+            name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
+            title = stringResource(
+                R.string.desarrolladores_moviles
+            )
+        )
+        Info(
+            telfNumb = stringResource(R.string._34_640870770),
+            mail = stringResource(R.string.correo_exampl_com),
+            socialHandle = stringResource(R.string.second_example_com)
+        )
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Titulo(
-                name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
-                title = stringResource(
-                    R.string.desarrolladores_moviles
-                )
-            )
-            Info(
-                telfNumb = stringResource(R.string._34_640870770),
-                mail = stringResource(R.string.correo_exampl_com),
-                socialHandle = stringResource(R.string.second_example_com)
-            )
-        }
+        Greeting()
     }
 }
