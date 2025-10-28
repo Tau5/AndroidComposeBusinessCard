@@ -82,20 +82,16 @@ fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifie
             "Phone",
             telfNumb
         )
-        Row {
-            ContactDetail(
-                painterResource(android.R.drawable.sym_action_email),
-                "Mail",
-                mail
-            )
-        }
-        Row {
-            ContactDetail(
-                painterResource(android.R.drawable.ic_dialog_info),
-                "Social media",
-                socialHandle
-            )
-        }
+        ContactDetail(
+            painterResource(android.R.drawable.sym_action_email),
+            "Mail",
+            mail
+        )
+        ContactDetail(
+            painterResource(android.R.drawable.ic_dialog_info),
+            "Social media",
+            socialHandle
+        )
     }
 }
 
