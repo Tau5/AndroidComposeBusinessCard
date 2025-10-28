@@ -9,11 +9,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -78,17 +83,17 @@ fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifie
 
     ) {
         ContactDetail(
-            painterResource(android.R.drawable.ic_menu_call),
+                Icons.Default.Phone,
             "Phone",
             telfNumb
         )
         ContactDetail(
-            painterResource(android.R.drawable.sym_action_email),
+            Icons.Default.Email,
             "Mail",
             mail
         )
         ContactDetail(
-            painterResource(android.R.drawable.ic_dialog_info),
+            Icons.Default.Share,
             "Social media",
             socialHandle
         )
@@ -96,12 +101,9 @@ fun Info(telfNumb: String, mail: String, socialHandle: String, modifier: Modifie
 }
 
 @Composable
-private fun ContactDetail(painter: Painter, alt: String, content: String) {
+private fun ContactDetail(icon: ImageVector, alt: String, content: String) {
     Row {
-        Image(
-            painter = painter,
-            contentDescription = alt
-        )
+        Icon(imageVector = icon, contentDescription = alt)
         Text(
             text = content
         )
