@@ -71,9 +71,10 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
 }
 
 @Composable
-fun Info(telfNumb: String, mail: String, secondMail:String) {
+fun Info(telfNumb: String, mail: String, secondMail: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
+            .padding()
 
     ) {
         Row {
@@ -101,8 +102,10 @@ fun GreetingPreview() {
             title = stringResource(
             R.string.desarrolladores_moviles
         ))
-        Info(telfNumb = stringResource(R.string._34_640870770), mail = stringResource(R.string.correo_exampl_com),
-            secondMail = stringResource(R.string.second_example_com)
+        Info(
+            telfNumb = stringResource(R.string._34_640870770),
+            mail = stringResource(R.string.correo_exampl_com),
+            secondMail = stringResource(R.string.second_example_com),
         )
     }
 }
