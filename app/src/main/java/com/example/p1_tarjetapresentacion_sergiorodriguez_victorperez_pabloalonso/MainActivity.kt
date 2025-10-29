@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,7 +36,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme {
-                Greeting()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background,
+                ) {
+                    Greeting()
+                }
             }
         }
     }
@@ -53,6 +59,7 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
                 bottom = 10.dp
             ),
         horizontalAlignment = Alignment.CenterHorizontally
+
 
     ) {
         Row {
@@ -115,7 +122,11 @@ private fun ContactDetail(icon: ImageVector, alt: String, content: String) {
 
 @Composable
 fun Greeting() {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        ) {
         Titulo(
             name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
             title = stringResource(
