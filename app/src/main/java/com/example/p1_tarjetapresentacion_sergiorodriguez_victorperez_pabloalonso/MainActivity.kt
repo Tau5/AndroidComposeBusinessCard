@@ -76,7 +76,7 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
         }
         Row {
             Text(
-                text = "$name",
+                text = name,
                 modifier = modifier
                     .padding(2.dp),
                 fontSize = 24.sp,
@@ -87,7 +87,7 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
         }
         Row {
             Text(
-                text = "$title",
+                text = title,
                 modifier = modifier
                     .padding(2.dp)
             )
