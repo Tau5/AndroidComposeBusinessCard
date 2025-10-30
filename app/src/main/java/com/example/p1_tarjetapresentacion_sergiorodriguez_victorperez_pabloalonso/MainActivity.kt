@@ -8,6 +8,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,8 +26,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.p1_tarjetapresentacion_sergiorodriguez_victorperez_pabloalonso.ui.theme.P1_TarjetaPresentacion_SergioRodriguez_VictorPerez_PabloAlonsoTheme
 
 
@@ -74,7 +78,11 @@ fun Titulo(name: String, modifier: Modifier = Modifier, title: String) {
             Text(
                 text = "$name",
                 modifier = modifier
-                    .padding(2.dp)
+                    .padding(2.dp),
+                fontSize = 24.sp,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.Bold
+
             )
         }
         Row {
@@ -126,18 +134,33 @@ fun Greeting() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        ) {
-        Titulo(
-            name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
-            title = stringResource(
-                R.string.desarrolladores_moviles
-            )
-        )
-        Info(
-            telfNumb = stringResource(R.string._34_640870770),
-            mail = stringResource(R.string.correo_exampl_com),
-            socialHandle = stringResource(R.string.second_example_com)
-        )
+    ) {
+
+        Column (
+            modifier = Modifier.weight(1f),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+
+        ){
+            Titulo(
+                name = stringResource(R.string.pablo_alonso_sergio_rodr_guez_y_victor_p_rez),
+                title = stringResource(
+                    R.string.desarrolladores_moviles
+                ),
+
+                )
+        }
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.padding(0.dp, 16.dp)
+        ){
+            Info(
+                telfNumb = stringResource(R.string._34_640870770),
+                mail = stringResource(R.string.correo_exampl_com),
+                socialHandle = stringResource(R.string.second_example_com),
+                )
+        }
     }
 }
 
